@@ -1,0 +1,188 @@
+#include <stdio.h>//By Esquivel company 2013
+#include <string.h>//Version Beta
+
+int tablero()//apariencia,del juego
+{
+    printf("\t\t\t_____________________\n\t\t\t  1   |   2   |   3\n\t\t\t______|_______|______\n");
+    printf("\t\t\t  4   |   5   |   6\n\t\t\t______|_______|______\n\t\t\t  7   |   8   |   9\n");
+    printf("\t\t\t______|_______|______\n");
+}
+
+int main()
+{
+    int signo,celda,limite=1,reglas[9],rep;//declaro variables
+    reglas[0]=0,reglas[1]=0,reglas[2]=0,reglas[3]=0,reglas[4]=0,reglas[5]=0,reglas[6]=0,reglas[7]=0,reglas[8]=0;
+     do{//Reglas al principio para que aprendan a jugar
+            system("CLS");
+            printf("\t\tIntrucciones\n1.-Para elegir donde poner la cruz o círculo escribe el numero de la casilla\n");
+            printf("2.-Diviertete\n3.-Para salir del juego teclea el número 10\n4.-para volver a jugar teclea 1\n\n\n");
+            tablero();//llamo al tablero para que ubiquen las casillas
+        char a[]="",b[]="-",c[]="-",d[]="-",e[]="-",f[]="-",g[]="-",h[]="-",i[]="-",equis[]="X",oval[]="O";//para cada
+            printf("Cruz o circulo? 1=CRUZ \n\t\t2.-=CIRCULO\n"); //pregunto con que quiere jugar           //casilla del game
+            scanf("%d",&signo);
+        do{//repetidor
+            printf("Cual casilla eliges?\t");
+            scanf("%d",&celda);("\n");//eligen el numero de casilla
+            system("CLS");
+            switch(celda)//organización de las casillas mediante un switch
+            {
+                case 1:
+                    if(signo==1)
+                        strcpy(a,equis);//da el valor de x, para ponerlo en el juego
+                    else
+                        strcpy(a,oval);//da el valor de o, para visualizarlo en el juego
+
+                    reglas[0]=1;
+                    break;
+                case 2:
+                    if(signo==1)
+                        strcpy(b,equis);
+                    else
+                        strcpy(b,oval);
+
+                    reglas[1]=1;
+                    break;
+                case 3:
+                    if(signo==1)
+                        strcpy(c,equis);
+                    else
+                        strcpy(c,oval);
+
+                    reglas[2]=1;
+                    break;
+                case 4:
+                    if(signo==1)
+                        strcpy(d,equis);
+                    else
+                        strcpy(d,oval);
+
+                    reglas[3]=1;
+                    break;
+                case 5:
+                    if(signo==1)
+                        strcpy(e,equis);
+                    else
+                        strcpy(e,oval);
+
+                    reglas[4]=1;
+                    break;
+                case 6:
+                    if(signo==1)
+                        strcpy(f,equis);
+                    else
+                        strcpy(f,oval);
+
+                    reglas[5]=1;
+                    break;
+                case 7:
+                    if(signo==1)
+                        strcpy(g,equis);
+                    else
+                        strcpy(g,oval);
+
+                    reglas[6]=1;
+                    break;
+                case 8:
+                    if(signo==1)
+                        strcpy(h,equis);
+                    else
+                        strcpy(h,oval);
+
+                    reglas[7]=1;
+                    break;
+                case 9:
+                    if(signo==1)
+                        strcpy(i,equis);
+                    else
+                        strcpy(i,oval);
+
+                    reglas[8]=1;
+                    break;
+                }
+            if(signo==1)//condicion para poner el signo cotrario al que el usuario eligio
+                {
+                if(reglas[0]==1&&reglas[1]!=1)
+                    {reglas[0]=2;
+                    strcpy(b,oval);}
+                if(reglas[1]==1&&reglas[2]!=1)
+                    {reglas[0]=2;
+                    strcpy(c,oval);}
+                if(reglas[2]==1&&reglas[3]!=1)
+                    {reglas[0]=2;
+                    strcpy(d,oval);}
+                if(reglas[3]==1&&reglas[4]!=1)
+                    {reglas[0]=2;
+                    strcpy(e,oval);}
+                if(reglas[4]==1&&reglas[5]!=1)
+                    {reglas[0]=2;
+                    strcpy(f,oval);}
+                if(reglas[5]==1&&reglas[6]!=1)
+                    {reglas[0]=2;
+                    strcpy(g,oval);}
+                if(reglas[6]==1&&reglas[7]!=1)
+                    {reglas[0]=2;
+                    strcpy(h,oval);}
+                if(reglas[7]==1&&reglas[8]!=1)
+                    {reglas[0]=2;
+                    strcpy(i,oval);}
+                }
+            else
+            {
+                if(reglas[0]==1&&reglas[1]!=1)
+                    {reglas[0]=2;
+                    strcpy(b,equis);}//la maquina juega, y marca que ya se ocupo esa casilla
+                if(reglas[1]==1&&reglas[2]!=1)
+                    {reglas[0]=2;
+                    strcpy(c,equis);}
+                if(reglas[2]==1&&reglas[3]!=1)
+                    {reglas[0]=2;
+                    strcpy(d,equis);}
+                if(reglas[3]==1&&reglas[4]!=1)
+                    {reglas[0]=2;
+                    strcpy(e,equis);}
+                if(reglas[4]==1&&reglas[5]!=1)
+                    {reglas[0]=2;
+                    strcpy(f,equis);}
+                if(reglas[5]==1&&reglas[6]!=1)
+                    {reglas[0]=2;
+                    strcpy(g,equis);}
+                if(reglas[6]==1&&reglas[7]!=1)
+                    {reglas[0]=2;
+                    strcpy(h,equis);}
+                if(reglas[7]==1&&reglas[8]!=1)
+                    {reglas[0]=2;
+                    strcpy(i,equis);}
+            }
+            printf("\t\t\t_____________________\n");
+            printf("\t\t\t  %s   |   %s   |   %s\n",a,b,c);
+            printf("\t\t\t______|_______|______\n");
+            printf("\t\t\t  %s   |   %s   |   %s\n",d,e,f);
+            printf("\t\t\t______|_______|______\n\n");
+            printf("\t\t\t  %s   |   %s   |   %s\n",g,h,i);
+            printf("\t\t\t______|_______|______\n");
+            limite++;
+            //condiciones para saber si gano
+            if(reglas[0]==1&&reglas[1]==1&&reglas[2]==1 || reglas[3]==1&&reglas[4]==1&&reglas[5]==1 || reglas[6]==1&&reglas[7]==1&&reglas[8]==1){
+                printf("Felicidades,has ganado");
+                limite=6;}
+            if(reglas[0]==1&&reglas[3]==1&&reglas[6]==1 || reglas[1]==1&&reglas[4]==1&&reglas[7]==1 || reglas[2]==1&&reglas[5]==1&&reglas[8]==1){
+                printf("Felicidades,has ganado");
+                limite=6;}
+            if(reglas[0]==1&&reglas[4]==1&&reglas[8]==1 || reglas[2]==1&&reglas[4]==1&&reglas[6]==1){
+                printf("Felicidades,has ganado");
+                limite=6;}
+                //Condiciones que dicen que perdio
+            if(reglas[0]==2&&reglas[1]==1&&reglas[2]==2 || reglas[3]==2&&reglas[4]==2&&reglas[5]==2 || reglas[6]==2&&reglas[7]==2&&reglas[8]==2){
+                printf("Felicidades,has PERDIDO");
+                limite=6;}
+            if(reglas[0]==2&&reglas[3]==2&&reglas[6]==2 || reglas[1]==2&&reglas[4]==2&&reglas[7]==2 || reglas[2]==2&&reglas[5]==2&&reglas[8]==2){
+                printf("Felicidades,has PERDIDO");
+                limite=6;}
+            if(reglas[0]==2&&reglas[4]==2&&reglas[8]==2 || reglas[2]==2&&reglas[4]==2&&reglas[6]==2){
+                printf("Felicidades,has PERDIDO");
+                limite=6;}
+            }while(limite<=5);
+        printf("Quieres volver a jugar?");
+        scanf("%d",&rep);
+    }while(rep==1);
+}
